@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1096942317088",
+    "project_id": "timbersmart-go",
+    "storage_bucket": "timbersmart-go.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096942317088:android:c14e0db2f25c68249ed645",
+        "android_client_info": {
+          "package_name": "com.timbersmart.tsgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1096942317088-kipjl0f3kduavv76gegbtbltjg6d1nfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8iJxKdT91tpdbMwAt7dvpZdafUksbGX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1096942317088-kipjl0f3kduavv76gegbtbltjg6d1nfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

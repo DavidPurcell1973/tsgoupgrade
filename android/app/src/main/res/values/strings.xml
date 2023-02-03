@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TS Go</string>
+<!--    Production-->
+    <string moduleConfig="true" name="CodePushDeploymentKey">uwMmJX0b-_mVzxvYGW3rBQjDIasxp_0unR6Uv</string>
+<!--    Staging-->
+<!--    <string moduleConfig="true" name="CodePushDeploymentKey">qz2Zzfu5yraF49iFMS519-g5HOM04fVraZQ9-</string>-->
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
+    <string name="CodePushPublicKey">
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvSqnyLvRW7GjF/XtSapN
+        bnI3JALwBTSVpK9INmsiQgiuYpBk7G/ZB/5NE0iqFzAnxn6kVHVsnsi7d036ZKYf
+        3ZEiROSphgrTh3iOqwFzhbmb/TZr8C6/mFzl3Kx34spi2Q+pnQ4/0J2AP+3qkkrr
+        BHgE1rWdB+hv7Qu21Ps5qHX1BWVSY2B1xKR4tBTTxdprHaDaRFemHXWuK/jJAXP1
+        wHZ9kSHkKXXLMYYS1/OdFyjX57+2fQD2h0uvz2SKActOaz3vdzgZabgjwjL4aB7n
+        835x4sv7SJvbe3uIb3WCLkis0lRj/H5t8/SSqPiFAnmCDidi6UgyxOHDqV+gc4/q
+        KwIDAQAB
+        -----END PUBLIC KEY-----
+    </string>
+</resources>

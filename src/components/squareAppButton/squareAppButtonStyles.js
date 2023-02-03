@@ -1,0 +1,75 @@
+import { StyleSheet } from 'react-native';
+
+export const colors = {
+  primary: '#3498db',
+  // secondary: '#ddd',
+  header: '#3498db',
+};
+
+const styles = StyleSheet.create({
+  squareButtonMainContainer: {
+    borderColor: colors.primary,
+    borderWidth: 1,
+    borderRadius: 10,
+    borderStyle: 'solid',
+    width: 140,
+    height: 140,
+  },
+  squareButtonMainShadowContainer: {
+    shadowOpacity: 0.75,
+    shadowRadius: 5,
+    elevation: 4,
+    shadowColor: 'red',
+    shadowOffset: { height: 0, width: 0 },
+    flex: 0,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: colors.primary,
+    borderWidth: 2,
+    borderRadius: 15,
+    borderStyle: 'solid',
+    width: 150,
+    height: 150,
+    margin: 10,
+  },
+  squareButtonContainer: {
+    // borderWidth: 1,
+    // borderColor: 'blue',
+    // align: 'center',
+    // marginRight: 5,
+    // marginLeft: -10,
+    // alignItems: 'center',
+    justifyContent: 'center',
+    // flex: 1,
+    // width: 100,
+    // height: 80,
+    height: '100%',
+  },
+  innerSquareButtonContainer: {
+    // borderRadius: 1,
+    flexDirection: 'column',
+    // borderColor: 'black',
+    // borderWidth: 1,
+    // height: '100%',
+    // weight: '100%',
+    alignContent: 'flex-start',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flex: 0,
+  },
+  titleTextStyle: {
+    padding: 0,
+    marginTop: 5,
+    textAlign: 'center',
+    color: '#175782',
+    fontWeight: 'bold',
+    // borderColor: 'red',
+    // borderWidth: 1,
+    // fontSize: 30,
+    // width: 100,
+    // height: 80,
+  },
+});
+
+export default styles;

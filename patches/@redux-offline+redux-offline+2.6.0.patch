@@ -1,0 +1,48 @@
+diff --git a/node_modules/@redux-offline/redux-offline/lib/defaults/detectNetwork.native.js b/node_modules/@redux-offline/redux-offline/lib/defaults/detectNetwork.native.js
+index b290d79..d037a95 100644
+--- a/node_modules/@redux-offline/redux-offline/lib/defaults/detectNetwork.native.js
++++ b/node_modules/@redux-offline/redux-offline/lib/defaults/detectNetwork.native.js
+@@ -17,6 +17,7 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/creat
+ 
+ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+ 
++var _reactNative = require("react-native");
+ var _reactNative = require("react-native");
+ 
+ var _detectNetworkNative = _interopRequireDefault(require("./detectNetwork.native.legacy"));
+diff --git a/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.js b/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.js
+index 65bcfb2..4ed9b37 100644
+--- a/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.js
++++ b/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.js
+@@ -1,5 +1,6 @@
+ /* eslint no-underscore-dangle: 0 */
+ import { AppState, NetInfo } from 'react-native'; // eslint-disable-line
++import NetInfo from '@react-native-community/netinfo';// eslint-disable-line
+ import LegacyDetectNetwork from './detectNetwork.native.legacy';
+ 
+ class DetectNetwork {
+diff --git a/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.legacy.js b/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.legacy.js
+index 1932d0b..ff978ca 100644
+--- a/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.legacy.js
++++ b/node_modules/@redux-offline/redux-offline/src/defaults/detectNetwork.native.legacy.js
+@@ -1,5 +1,6 @@
+ /* eslint no-underscore-dangle: 0 */
+-import { AppState, NetInfo } from 'react-native'; // eslint-disable-line
++import { AppState} from 'react-native'; // eslint-disable-line
++import NetInfo from '@react-native-community/netinfo';// eslint-disable-line
+ 
+ class LegacyDetectNetwork {
+   constructor(callback) {
+diff --git a/node_modules/@redux-offline/redux-offline/src/defaults/persist.native.js b/node_modules/@redux-offline/redux-offline/src/defaults/persist.native.js
+index c92704a..a2a1ae8 100644
+--- a/node_modules/@redux-offline/redux-offline/src/defaults/persist.native.js
++++ b/node_modules/@redux-offline/redux-offline/src/defaults/persist.native.js
+@@ -1,6 +1,7 @@
+ // @flow
+ // $FlowIgnore
+-import { AsyncStorage } from 'react-native'; // eslint-disable-line
++//import { AsyncStorage } from 'react-native'; // eslint-disable-line
++import AsyncStorage from '@react-native-async-storage/async-storage';
+ import { persistStore } from 'redux-persist';
+ 
+ export default (store: any, options: {}, callback: any) =>
