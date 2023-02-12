@@ -97,6 +97,8 @@ const LoadPlanningLoadItemScreen = (props) => {
   };
 
   useEffect(() => {
+    logger.debug('page: ' + 'item');  
+    //logger.debug("Navi" + navigation.state.routeName);
     dispatch(clearLoadItems());
     logger.debug(
       `${username} (${deviceName} or ${androidId}) on Load ${route.params.id} Consignment screen`,

@@ -18,19 +18,35 @@ const useHoneywellScanner = (props: any) => {
 
   const logPrefix = `[${screen}] `;
 
-  useEffect(() => {
-    if (HoneywellScanner.isCompatible) {
+  useEffect(() => 
+  {
+
+    var hasBeenClosed : boolean;
+    hasBeenClosed = false;
+
+    if (HoneywellScanner.isCompatible) 
+    {
       // logger.debug('Found Honeywell scanner!');
       if (enabled) {
-        if (isFocused) {
+        if (isFocused) 
+        {
           // Reclaiming so that onBarcodeReadSuccess has new data...
           // if not reclaiming, onBarcodeReadSuccess may not have new data...
 
-          // if (!claimed) {
-          logger.debug(`${logPrefix}Claiming Honeywell scanner...`);
+          if (!claimed) 
+          {
+            logger.debug('Barcode reader is NOT claimed');           
+          }
+          else
+          {
+            logger.debug('Barcode reader is claimed');
+          }
+
+          logger.debug(`${logPrefix} Is focussed Claiming Honeywell scanner...`);
 
           HoneywellScanner.startReader().then((isClaimed: boolean) => {
             setClaimed(isClaimed);
+            logger.debug(claimed ? 'Start reader Barcode reader is claimed' : 'Barcode reader is busy');
             logger.info(
               `${logPrefix}Honeywell scanner is ${
                 isClaimed ? 'claimed' : 'NOT claimed'
@@ -46,39 +62,35 @@ const useHoneywellScanner = (props: any) => {
               onBarcodeReadSuccess(event.data, memoizedData);
             });
           });
-          // }
-          // if (claimed) {
-          //   logger.debug(
-          //     `${logPrefix}Honeywell scanner is claimed, attempting to release...`,
-          //   );
-          //   HoneywellScanner.stopReader().then(() => {
-          //     logger.info(`${logPrefix}Honeywell scanner released!`);
-          //     HoneywellScanner.offBarcodeReadSuccess();
-          //     setClaimed(false);
-          //   });
-          // }
-
-          // return () => {
-          //   HoneywellScanner.stopReader().then(() => {
-          //     logger.debug(`${logPrefix}Honeywell scanner released!`);
-          //     HoneywellScanner.offBarcodeReadSuccess();
-          //     setClaimed(false);
-          //   });
-          // };
-        } else {
-          if (claimed) {
-            try {
+        } 
+        else 
+        {
+          if (claimed) 
+          {
+            try 
+            {
               logger.debug(
-                `${logPrefix}Honeywell scanner is claimed, attempting to release...`,
+                `${logPrefix} Not focussed, Honeywell scanner is claimed, attempting to release...`,
               );
-              HoneywellScanner.stopReader().then(() => {
-                logger.info(`${logPrefix}Honeywell scanner released!`);
-                HoneywellScanner.offBarcodeReadSuccess();
-              });
+
+              if(screen != 'LoadListScreen')
+              {
+                HoneywellScanner.stopReader().then(() => 
+                {               
+                  setClaimed(false);
+                  logger.info(`${logPrefix}Honeywell scanner released!`);   
+                  HoneywellScanner.offBarcodeReadSuccess();
+                  hasBeenClosed=true;
+                });
+              }
             } catch (err) {
               console.error(err);
             }
-            setClaimed(false);
+            
+          }
+          else
+          {
+            logger.debug(`${logPrefix} Is not focussed is not claimed...`);
           }
         }
       } else {

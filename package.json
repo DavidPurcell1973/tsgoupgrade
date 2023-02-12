@@ -1,7 +1,7 @@
 {
   "name": "tsgo",
   "displayName": "TS Go",
-  "version": "1.15.1",
+  "version": "1.15.2",
   "cpVersion": "",
   "commit": "9eb07aa7024b56e193e8d0a90fcca7b1763c75eb",
   "private": true,

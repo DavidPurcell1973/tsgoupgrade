@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState, useAppState} from 'react';
 import {View} from 'react-native';
 import {Input} from 'react-native-elements';
 import {shallowEqual, useDispatch, useSelector} from 'react-redux';
@@ -110,7 +110,10 @@ const LoadPlanningLoadScreen = (props) => {
         // 'Notes?': isString(e.loadNotes) ? 'Yes' : 'No',
         // 'All picked?': e.pksPicked >= e.pksToLoad ? 'Yes' : 'No',
       }))[0];
-      if (item) navigation.navigate('LoadPlanningLoadItem', item);
+      if (item) 
+      {
+        navigation.navigate('LoadPlanningLoadItem', item); 
+      }
       else logger.warn('Load must be an integer!');
     } else {
       displayToast('Unable to find Load - please retry');

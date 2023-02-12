@@ -35,7 +35,7 @@ import com.android.build.OutputFile
  *   // See http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Build-Variants
  *   // The configuration property can be in the following formats
  *   //         'bundleIn${productFlavor}${buildType}'
- *   //         'bundleIn${buildType}'
+ *   //         'bundleIn${buildType}'0
  *   // bundleInFreeDebug: true,
  *   // bundleInPaidRelease: true,
  *   // bundleInBeta: true,
@@ -148,8 +148,8 @@ android {
         multiDexEnabled true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 65
-        versionName "1.15.1"
+        versionCode 66
+        versionName "1.15.2"
         missingDimensionStrategy 'react-native-camera', 'general'
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
